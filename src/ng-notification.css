@@ -1,0 +1,171 @@
+#message_container {
+    position: fixed;
+    right: 10px;
+    margin: 0 auto 10px;    
+    top:50px;
+    right:0px;
+}
+
+div#point
+{
+      background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #53C8EE),
+    color-stop(1, #75F0FF)
+  );
+
+  background-image: -o-linear-gradient(bottom, #53C8EE 0%, #75F0FF 100%);
+  background-image: -moz-linear-gradient(bottom, #53C8EE 0%, #75F0FF 100%);
+  background-image: -webkit-linear-gradient(bottom, #53C8EE 0%, #75F0FF 100%);
+  background-image: -ms-linear-gradient(bottom, #53C8EE 0%, #75F0FF 100%);
+  background-image: linear-gradient(to bottom, #53C8EE 0%, #75F0FF 100%);
+    width: 3px;
+    height: 3px;
+    position: relative;
+    background-color: blue;
+    /*border: 3px solid blue;*/    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    position: absolute;
+    /*-webkit-transform-style: preserve-3d;    
+    -webkit-transform: rotateX(80deg) rotateY(20deg);*/
+
+    -webkit-animation:drawpoint 3s linear infinite;
+}
+
+div#message.animation {
+
+    position: relative;    
+    /*right: -85%;*/
+    float: left;        
+    -webkit-border-radius: 5px 0px 0px 5px;    
+    height: 22px;
+    padding-right: 15px;
+    padding-left: 10px;
+    opacity: 0;
+        
+    -webkit-animation:showmessage 0.5s ease 0.2s 1 forwards, hidemessage 2s ease 3s 1 forwards;
+    -moz-animation:showmessage 0.5s ease 0.2s 1 forwards, hidemessage 2s ease 3s 1 forwards;
+    -o-animation:showmessage 0.5s ease 0.2s 1 forwards, hidemessage 2s ease 3s 1 forwards;
+    animation:showmessage 0.5s ease 0.2s 1 forwards, hidemessage 2s ease 3s 1 forwards;
+            
+}
+
+div#circle1 {    
+    
+    position: absolute;
+    float: left;     
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    width: 22px;
+    height: 22px;
+    right: 20px;
+    -webkit-animation:movingfirst 0.2s ease 1s 1 forwards;
+
+}
+
+div#circle2 {    
+    
+    position: absolute;
+    float: left;    
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    width: 22px;
+    height: 22px;
+    right: 20px; 
+    opacity: 0;
+    -webkit-animation:movingsecond 0.2s ease 5s 1 forwards;
+
+}
+
+@-webkit-keyframes drawpoint {
+  
+  0% {left:0%; }
+  25% {left:25%; -webkit-transform: translateY(-20px)}
+  30% {width: 5px; height:5px;}
+  35% {width: 3px; height:3px;}
+  40% {width: 5px; height:5px;}
+  45% {width: 3px; height:3px;}
+  50% {left:50%; -webkit-transform: translateY(20px); }
+  55% {width: 5px; height:5px;}
+  60% {width: 3px; height:3px;}
+  70% {left:70%; -webkit-transform: translateY(-10px);}  
+  75% {left:75%; -webkit-transform: translateY(10px);} 
+  55% {width: 5px; height:5px;}
+  60% {width: 3px; height:3px;}
+  100% {left:100%;width: 3px; height:3px;} 
+  
+}
+
+@-webkit-keyframes showmessage {
+  
+  0% {}
+  100% {right:0%;opacity: 1;-webkit-transform: scale(1.0)} 
+  
+}
+
+@-webkit-keyframes hidemessage {
+  
+  0% {opacity: 1;}  
+  100% {opacity: 0;} 
+  
+}
+
+@-webkit-keyframes movingfirst {    
+
+  0% {}
+  100% {-webkit-transform: scale(0);}  
+
+}
+
+@-webkit-keyframes movingsecond {    
+
+  0% {}  
+  100% {-webkit-transform: scale(1);opacity: 1.0}  
+
+}
+
+/*  #ease.test_box {
+    -webkit-transition: all 4s ease;
+-moz-transition: all 4s ease;
+-o-transition: all 4s ease;
+transition: all 4s ease;    border:1px #f00 solid;
+  }
+  #ease-in.test_box {
+    -webkit-transition: all 4s ease-in;
+-moz-transition: all 4s ease-in;
+-o-transition: all 4s ease-in;
+transition: all 4s ease-in;    border:1px #0f0 solid;
+  }
+  #ease-out.test_box {
+    -webkit-transition: all 4s ease-out;
+-moz-transition: all 4s ease-out;
+-o-transition: all 4s ease-out;
+transition: all 4s ease-out;    border:1px #00f solid;
+  }
+  #ease-in-out.test_box {
+    -webkit-transition: all 4s ease-in-out;
+-moz-transition: all 4s ease-in-out;
+-o-transition: all 4s ease-in-out;
+transition: all 4s ease-in-out;    border:1px #ff0 solid;
+  }
+  #linear.test_box {
+    -webkit-transition: all 4s linear;
+    -moz-transition: all 4s linear;
+    -o-transition: all 4s linear;
+    transition: all 4s linear;    border:1px #f0f solid;
+  }
+  #custom.test_box {
+    -webkit-transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945);
+-moz-transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945);
+-o-transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945);
+transition: all 4s cubic-bezier(1.000, 0.835, 0.000, 0.945);    border:1px #0ff solid;
+  }
+  #negative.test_box {
+    -webkit-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+-moz-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+-o-transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);
+transition: all 4s cubic-bezier(1.000, -0.530, 0.405, 1.425);    border:1px #000 dotted;
+  }*/

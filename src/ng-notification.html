@@ -1,0 +1,25 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="ng-notification.css">
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="ng-notification.js"></script>
+</head>
+<body>	
+
+	<div ng-app='myApp' ng-controller='ctrl'>
+		<notification></notification>		
+	</div>
+
+	<script type="text/javascript">
+
+		angular.module('myApp', ['ngNotification']);
+
+        function ctrl($scope) {            
+
+            $scope.test = function(type) {
+            	 
+            }
+        }
+	</script>
+
+</body>

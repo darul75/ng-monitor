@@ -1,0 +1,42 @@
+{
+  "name": "ng-notification",
+  "version": "0.0.2",
+  "author": {
+    "name": "Julien Valéry",
+    "email": "darul75@gmail.com"
+  },
+  "homepage": "https://github.com/darul75/ng-notification",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darul75/ng-notification.git"
+  },
+  "keywords": [
+    "angular",
+    "ui",
+    "notification",
+    "alert"
+  ],
+  "main": "./dist/ng-notification.min.js",
+  "dependencies": {
+    "angular": "~1.2.16",
+    "angular-sanitize": "1.2.x",
+    "jquery": "latest",
+    "angular-mocks": "~1.2.16",
+    "bootstrap": "~3.1.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.x"
+  },
+  "authors": [
+    "darul <darul75@gmail.com>"
+  ],
+  "description": "Angular directive for bootstrap notification display.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

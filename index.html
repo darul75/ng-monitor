@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Ng-slider : AngularJS slider control directive" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/prism.css">
+    <link rel="stylesheet" type="text/css" href="src/ng-notification.css">
+    <link rel="stylesheet" type="text/css" href="javascripts/bootstrap/dist/css/bootstrap.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="src/ng-notification.js"></script>
+    <script type="text/javascript" src="javascripts/prism.js"></script>
+
+    <title>Ng-notification</title>
+  </head>
+
+  <body>
+
+   <div class="wrapper"> 
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header>
+
+          <h1 id="project_title">Ng-notification</h1>
+          <p>Angular directive for bootstrap notification display.</p>
+          <ul>
+           <li>
+              <a href="https://github.com/darul75/ng-notification/zipball/master">Download <strong>Zip File</strong></a>
+           </li>
+           <li>   
+              <a href="https://github.com/darul75/ng-notification/tarball/master">Download <strong>Tar ball</strong></a>
+           </li>
+           <li>   
+              <a id="forkme_banner" href="https://github.com/darul75/ng-notification">View on <strong>GitHub</strong></a>
+           </li>
+          </ul> 
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome</h3>
+
+        Today very simple and using a CSS3 simple effect.
+
+
+        <div ng-app="myApp" ng-controller="ctrl">
+          <div ng-app='myApp' ng-controller='ctrl'>
+    <notification></notification>
+    <button class='btn btn-primary' ng-click="test('primary')" style="position:absolute; top:300px;">Primary</button>
+    <button class='btn btn-success' ng-click="test('success')" style="position:absolute; top:400px;">Success</button>
+    <button class='btn btn-info' ng-click="test('info')" style="position:absolute; top:500px;">Info</button>
+    <button class='btn btn-warning' ng-click="test('warning')" style="position:absolute; top:800px;">Warning</button>
+    <button class='btn btn-danger' ng-click="test('danger')" style="position:absolute; top:1000px;">Danger</button>
+    <button class='btn btn-danger' ng-click="test('unknown')" style="position:absolute; top:1200px;">Unknown type</button>
+  </div>
+
+        </div>
+
+      </section>
+    </div>
+
+  <script type="text/javascript"> 
+
+      angular.module('myApp', ['ngNotification']);
+
+        function ctrl($scope) {            
+
+            $scope.test = function(type) {
+               $scope.$broadcast('notification', {type: type, msg:'This is ' + type + ' and it can be long message why not'});
+            }
+      }
+
+  </script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45895157-14', 'darul75.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+
+   <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer>
+        <p class="copyright">Ng-slider maintained by <a href="https://github.com/darul75">darul75</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a> — Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+      </footer>
+    </div>       
+  </body>
+</html>
