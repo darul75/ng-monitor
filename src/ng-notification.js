@@ -78,6 +78,7 @@
                         window.msRequestAnimationFrame;					
 
 				var x = 0;
+				var y = h/3;
 				var animFlag;					
 
 				function sineWave()
@@ -85,7 +86,9 @@
 					var canvas = document.getElementById("canvas");
 					if (canvas.getContext) {
 
-						var ctx = canvas.getContext("2d");						
+						var ctx = canvas.getContext("2d");	
+
+						ctx.lineWidth = 1;					
 
 						// Find the sine of the angle
 						var y = Math.sin(x*Math.PI/50);
@@ -106,13 +109,12 @@
 						// 	// ctx.fillStyle = "red";
 						// }
 
-						ctx.fillStyle = 'rgba(11, 180, 130, 0.7)';
+						ctx.fillStyle = 'rgba(11, 180, 130, 0.5)';
 
 						// We will use the fillRect method to draw the actual wave. The length and breath of the rectangle are given by the magnitude of the sine wave
-						ctx.fillRect(x, y, Math.sin(x * Math.PI/180) * 5, Math.sin(x * Math.PI/180) * 5);
-
+						ctx.fillRect(x, y, Math.sin(x * Math.PI/180) * 5, Math.sin(x * Math.PI/180) * 5);						
 						// Increment the angle.
-						x+=0.8;
+						x+=1;
 
 						// When the angle reaches 1040, stop the animation.
 
