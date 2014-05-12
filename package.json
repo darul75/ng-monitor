@@ -1,28 +1,28 @@
 {
-  "name": "ng-notification",
-  "description": "Angular directive for bootstrap notification display.",
-  "version": "0.0.2",
+  "name": "ng-monitor",
+  "description": "Angular directive monitoring funky status display.",
+  "version": "0.0.1",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
   },
-  "filename": "./src/ng-notification.js",
-  "homepage": "https://github.com/darul75/ng-notification",
+  "filename": "./src/ng-monitor.js",
+  "homepage": "https://github.com/darul75/ng-monitor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darul75/ng-notification.git"
+    "url": "https://github.com/darul75/ng-monitor.git"
   },
   "keywords": [
     "angular",
     "ui",
-    "notification",
-    "alert"
+    "monitoring",
+    "status"
   ],
   "scripts": {
     "test": "./node_modules/.bin/karma start test/my.conf.js"
   },
   "bugs": {
-    "url": "https://github.com/darul75/ng-notification/issues"
+    "url": "https://github.com/darul75/ng-monitor/issues"
   },
   "dependencies": {
   },
@@ -32,6 +32,11 @@
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-cssmin": "~0.6.0",
-    "karma": "latest"
+    "karma": "latest",
+    "grunt-bower-task": "~0.3.4",
+    "karma-phantomjs-launcher": "~0.1.4",
+    "karma-jasmine": "~0.1.5",
+    "karma-chrome-launcher": "~0.1.3",
+    "karma-firefox-launcher": "~0.1.3"
   }
 }

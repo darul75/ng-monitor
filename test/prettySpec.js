@@ -1,7 +1,7 @@
-describe('test notification', function () {
+describe('test monitor', function () {
 	var $ngCompile, $ngRootScope;
 
-	beforeEach(module('ngNotification'));
+	beforeEach(module('ngMonitor'));
 
 	beforeEach(inject(function ($compile, $rootScope) {
 		

@@ -1,22 +1,24 @@
 {
-  "name": "ng-notification",
-  "version": "0.0.2",
+  "name": "ng-monitor",
+  "description": "Angular directive monitoring funky status display.",
+  "version": "0.0.1",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
   },
-  "homepage": "https://github.com/darul75/ng-notification",
+  "homepage": "https://github.com/darul75/ng-monitor",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darul75/ng-notification.git"
+    "url": "https://github.com/darul75/ng-monitor.git"
   },
   "keywords": [
     "angular",
     "ui",
-    "notification",
+    "monitoring",
+    "status",
     "alert"
   ],
-  "main": "./dist/ng-notification.min.js",
+  "main": "./dist/ng-monitor.min.js",
   "dependencies": {
     "angular": "~1.2.16",
     "angular-sanitize": "1.2.x",
@@ -30,7 +32,6 @@
   "authors": [
     "darul <darul75@gmail.com>"
   ],
-  "description": "Angular directive for bootstrap notification display.",
   "license": "MIT",
   "ignore": [
     "**/.*",

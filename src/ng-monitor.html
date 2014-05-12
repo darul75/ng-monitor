@@ -1,0 +1,40 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">	
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="ng-monitor.js"></script>
+</head>
+<body>	
+
+	<div ng-app='myApp' ng-controller='ctrl'>
+		<div class='row'>
+			<div class='col-md-4'>
+				<canvas monitor id='1' w='400' h='300'></canvas>		
+			</div>
+			<div class='col-md-4'>
+				<canvas monitor id='2' w='300' h='200'></canvas>		
+			</div>
+			<div class='col-md-4'>
+				<canvas monitor id='3' w='200' h='100'></canvas>		
+			</div>
+		</div>	
+		<button type='button' ng-click='randomPrc(20);' class='btn btn-info'>LOW</button>
+		<button type='button' ng-click='randomPrc(60);' class='btn btn-success'>MEDIUM</button>
+		<button type='button' ng-click='randomPrc(80);' class='btn btn-danger'>HIGH</button>
+		<button type='button' ng-click='randomPrc();' class='btn btn-primary'>RANDOM</button>
+	</div>
+
+	<script type="text/javascript">
+
+		angular.module('myApp', ['ngMonitor']);
+
+        function ctrl($scope) {            
+
+            $scope.randomPrc = function(value) {
+            	var val = value || Math.floor(Math.random() * 100) + 1;
+            	
+            	$scope.$broadcast('ng-monitor', {prc: val});            	 
+            }
+        }
+	</script>
+
+</body>
