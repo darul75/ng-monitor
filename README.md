@@ -5,8 +5,6 @@ Angular directive monitoring with friendly funky status display.
 
 Canvas mandatory.
 
-*Bootstrap version 3.*
-
 Why
 ------------
 
