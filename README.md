@@ -1,7 +1,7 @@
-ng-notification [![NPM version](https://badge.fury.io/js/ng-notification.png)](http://badge.fury.io/js/ng-notification) [![Build Status](https://travis-ci.org/darul75/ng-notification.png?branch=master)](https://travis-ci.org/darul75/ng-notification) [![Total views](https://sourcegraph.com/api/repos/github.com/darul75/ng-notification/counters/views.png)](https://sourcegraph.com/github.com/darul75/ng-notification)
+ng-monitor [![NPM version](https://badge.fury.io/js/ng-monitor.png)](http://badge.fury.io/js/ng-monitor) [![Build Status](https://travis-ci.org/darul75/ng-monitor.png?branch=master)](https://travis-ci.org/darul75/ng-monitor) [![Total views](https://sourcegraph.com/api/repos/github.com/darul75/ng-monitor/counters/views.png)](https://sourcegraph.com/github.com/darul75/ng-monitor)
 =====================
 
-Simple angular notification directive Bootstrap 3 style. 
+Simple angular monitor directive Bootstrap 3 style. 
 
 It includes a small CSS3 effect, so you may guess IE6 do not like it.
 
@@ -18,7 +18,7 @@ This directive is fully based on angular event broadcasting, you trigger event =
 
 Demo
 ------------
-http://darul75.github.io/ng-notification/
+http://darul75.github.io/ng-monitor/
 
 How to use it
 -------------
@@ -32,27 +32,27 @@ You should already have script required for Angular.
 to the list above, you should add:
 
 ```html
-<link rel="stylesheet" type="text/css" href="ng-notification.min.css">
-<script type="text/javascript" src="ng-notification.min.js"></script>
+<link rel="stylesheet" type="text/css" href="ng-monitor.min.css">
+<script type="text/javascript" src="ng-monitor.min.js"></script>
 ```
 
-Inject `ngNotification` in your application module:
+Inject `ngMonitor` in your application module:
 
 ```javascript
-angular.module('myApp', ['ngNotification']);
+angular.module('myApp', ['ngMonitor']);
 ```
 
 and then just add 
 
 ```html
-<notification></notification>
+<canvas monitor id='2' w='300' h='200'></canvas>
 ```
 
 and broadcast some events to display notifications when needed
 
 ```javascript
-$scope.$broadcast('notification', {type: 'info', msg:'This is ' + type + ' and it can be long message why not'});
-// possible type field values are : 'primary','success', 'info', 'warning', 'danger'
+$scope.$broadcast('ng-monitor', {prc: val});
+// val: 50 for 50%...
 
 ```
 
@@ -67,7 +67,7 @@ Installation
 Using npm:
 
 ```
-npm install ng-notification
+npm install ng-monitor
 
 ```
 
