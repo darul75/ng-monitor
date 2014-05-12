@@ -19,7 +19,7 @@
     "status"
   ],
   "scripts": {
-    "test": "./node_modules/.bin/karma start test/my.conf.js"
+    "test": "grunt karma"
   },
   "bugs": {
     "url": "https://github.com/darul75/ng-monitor/issues"
