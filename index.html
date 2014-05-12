@@ -4,76 +4,97 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Ng-monitor : funny stuff" />
+    <meta name="description" content="Ng-slider : AngularJS slider control directive" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/prism.css">    
+    <link rel="stylesheet" type="text/css" href="javascripts/bootstrap/dist/css/bootstrap.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="src/ng-monitor.js"></script>
+    <script type="text/javascript" src="javascripts/prism.js"></script>
 
     <title>Ng-monitor</title>
   </head>
 
   <body>
 
+   <div class="wrapper"> 
+
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/darul75/ng-monitor">View on GitHub</a>
+        <header>
 
           <h1 id="project_title">Ng-monitor</h1>
-          <h2 id="project_tagline">funny stuff</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/darul75/ng-monitor/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/darul75/ng-monitor/tarball/master">Download this project as a tar.gz file</a>
-            </section>
+          <p>Angular directive monitoring funky status display.</p>
+          <ul>
+           <li>
+              <a href="https://github.com/darul75/ng-monitor/zipball/master">Download <strong>Zip File</strong></a>
+           </li>
+           <li>   
+              <a href="https://github.com/darul75/ng-monitor/tarball/master">Download <strong>Tar ball</strong></a>
+           </li>
+           <li>   
+              <a id="forkme_banner" href="https://github.com/darul75/ng-monitor">View on <strong>GitHub</strong></a>
+           </li>
+          </ul> 
         </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h3><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        Canvas power
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+        <div ng-app="myApp" ng-controller="ctrl">
+         <div class='row'><div class='col-md-6'><canvas monitor id='1' w='400' h='300'></canvas></div></div>
+         <div class='row'><div class='col-md-6'><canvas monitor id='2' w='300' h='200'></canvas></div></div>
+         <div class='row'><div class='col-md-6'><canvas monitor id='3' w='200' h='100'></canvas></div></div>
+         <button type='button' ng-click='randomPrc(20);' class='btn btn-info'>LOW</button>
+         <button type='button' ng-click='randomPrc(60);' class='btn btn-success'>MEDIUM</button>
+         <button type='button' ng-click='randomPrc(80);' class='btn btn-danger'>HIGH</button>
+         <button type='button' ng-click='randomPrc();' class='btn btn-primary'>RANDOM</button>
+        </div>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
       </section>
     </div>
 
-    <!-- FOOTER  -->
+  <script type="text/javascript"> 
+
+     angular.module('myApp', ['ngMonitor']);
+
+        function ctrl($scope) {            
+
+            $scope.randomPrc = function(value) {
+              var val = value || Math.floor(Math.random() * 100) + 1;
+              
+              $scope.$broadcast('ng-monitor', {prc: val});               
+            }
+        }
+
+  </script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45895157-15', 'darul75.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+
+   <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
-      <footer class="inner">
+      <footer>
         <p class="copyright">Ng-monitor maintained by <a href="https://github.com/darul75">darul75</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a> — Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
       </footer>
-    </div>
-
-    
-
+    </div>       
   </body>
 </html>
