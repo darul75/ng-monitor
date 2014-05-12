@@ -7,13 +7,21 @@ module.exports = function(grunt) {
     jshint: {
       files: ['src/ng-monitor.js', 'test/**/*.js']
     },
+    // BOWER
+    bower: {
+      install: {
+        options: {
+          targetDir: './bower_components'
+        }
+      }
+    },
     // KARMA TASK CONFIG
     karma: {
       unit: {
         options: {
           basePath: './',
           frameworks: ['jasmine'],
-          browsers: ['Chrome'],
+          browsers: ['Firefox'],
           autoWatch: true,
           singleRun: true,
           files: [            
@@ -60,8 +68,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-karma');
 
   // TASK REGISTER
-  grunt.registerTask('default', ['jshint', 'cssmin', 'uglify:task1', 'karma']);
+  grunt.registerTask('default', ['jshint', 'bower', 'cssmin', 'uglify:task1', 'karma']);
 };
