@@ -8,7 +8,7 @@ Canvas mandatory.
 Why
 ------------
 
-Play with canvas, get simple back-office status display (serveur, disks capacity..)
+Play with canvas, get simple back-office status display (server, disk usage..)
 
 Demo
 ------------
