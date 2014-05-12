@@ -1,20 +1,16 @@
 ng-monitor [![NPM version](https://badge.fury.io/js/ng-monitor.png)](http://badge.fury.io/js/ng-monitor) [![Build Status](https://travis-ci.org/darul75/ng-monitor.png?branch=master)](https://travis-ci.org/darul75/ng-monitor) [![Total views](https://sourcegraph.com/api/repos/github.com/darul75/ng-monitor/counters/views.png)](https://sourcegraph.com/github.com/darul75/ng-monitor)
 =====================
 
-Simple angular monitor directive Bootstrap 3 style. 
+Angular directive monitoring with friendly funky status display.
 
-It includes a small CSS3 effect, so you may guess IE6 do not like it.
+Canvas mandatory.
 
 *Bootstrap version 3.*
 
 Why
 ------------
 
-I had to test some CSS3 instructions and play with it.
-
-Then AngularStrap or native Boostrap alert messages are not very friendly, popup too big, this one looks less intrusive.
-
-This directive is fully based on angular event broadcasting, you trigger event => directive catch it.
+Play with canvas, get simple back-office status display (serveur, disks capacity..)
 
 Demo
 ------------
@@ -32,7 +28,6 @@ You should already have script required for Angular.
 to the list above, you should add:
 
 ```html
-<link rel="stylesheet" type="text/css" href="ng-monitor.min.css">
 <script type="text/javascript" src="ng-monitor.min.js"></script>
 ```
 
@@ -48,7 +43,7 @@ and then just add
 <canvas monitor id='2' w='300' h='200'></canvas>
 ```
 
-and broadcast some events to display notifications when needed
+and broadcast some events of that kind with percentage value:
 
 ```javascript
 $scope.$broadcast('ng-monitor', {prc: val});
@@ -58,7 +53,8 @@ $scope.$broadcast('ng-monitor', {prc: val});
 
 ### Options
 
-TODO
+TODO: animation improves ( faster, slower...)
+...
 
 
 Installation
