@@ -72,7 +72,7 @@
 					var txt = prc +'%';
 					var size = Math.round(h/7);
 					ctx.font = 'normal '+ size +'px courier';					
-					ctx.fillStyle = 'rgba('+ getColor() + ', 0.7)';
+					ctx.fillStyle = 'rgba('+ getParadigm().color + ', 0.7)';
 					ctx.fillText(txt, w-w/5, h/7);
 				};
 
@@ -95,17 +95,21 @@
 				var gap = h/4;
 
 				// GRAPH
-				function sineWave() {				
+				function sineWave() {	
 
-					ctx.lineWidth = 1;					
+					var p = getParadigm();			
 
-					var y = Math.sin(x*Math.PI/gap);						
+					ctx.lineWidth = 2;		
+
+					var factor = p.factor*x;			
+
+					var y = Math.sin(factor*Math.PI/gap);						
 					y = h/2 - (y-0) * gap;
 
-					ctx.fillStyle = 'rgba('+ getColor() + ', 0.5)';
+					ctx.fillStyle = 'rgba('+ p.color + ', 0.5)';
 
 					ctx.fillRect(x, y, Math.sin(x * Math.PI/180) * 5, Math.sin(x * Math.PI/180) * 5);						
-					x+=1;
+					x+=0.5;
 
 					if(x > canvas.width) {
 						redraw();
@@ -120,20 +124,24 @@
 					buildDigits();
 				}
 
-				function getColor() {
+				function getParadigm() {
 					var c = levels.NORMAL;
+					var f = 1;
 										
 					if (prc && prc < 30) {
 						c = levels.LOW;
+						f = 1;
 					}
 					else if (prc && (prc > 30 && prc < 70)) {
 						c = levels.NORMAL;
+						f = 2;
 					}
 					else if (prc) {
 						c = levels.HIGH;
+						f = 3;
 					}
 
-					return c;
+					return {color: c, factor: f};
 				}			
 					
 				sineWave();				
