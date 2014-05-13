@@ -38,7 +38,7 @@ angular.module('myApp', ['ngMonitor']);
 and then just add 
 
 ```html
-<canvas monitor id='2' w='300' h='200'></canvas>
+<canvas monitor id='myId' w='300' h='200'></canvas>
 ```
 
 and broadcast some events of that kind with percentage value:
@@ -49,12 +49,6 @@ $scope.$broadcast('ng-monitor', {prc: val});
 
 ```
 
-### Options
-
-TODO: animation improves ( faster, slower...)
-...
-
-
 Installation
 ------------
 
@@ -62,13 +56,10 @@ Using npm:
 
 ```
 npm install ng-monitor
-
 ```
-
 
 How to use it
 -------------
-
 
 ### Build
 
