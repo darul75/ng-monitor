@@ -1,7 +1,7 @@
 {
   "name": "ng-monitor",
   "description": "Angular directive monitoring funky status display.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"

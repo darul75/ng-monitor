@@ -1,7 +1,7 @@
 {
   "name": "ng-monitor",
   "description": "Angular directive monitoring funky status display.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
@@ -33,7 +33,7 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-cssmin": "~0.6.0",
     "karma": "latest",
-    "grunt-bower-task": "~0.3.4",
+    "grunt-bower-task": "0.4.0",
     "karma-phantomjs-launcher": "~0.1.4",
     "karma-jasmine": "~0.1.5",
     "karma-chrome-launcher": "~0.1.3",
